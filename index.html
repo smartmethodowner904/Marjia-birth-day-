@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Birthday Surprise</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Happy Birthday Marjia</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,152 +17,22 @@
 }
 
 body{
-    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+    font-family:'Hind Siliguri', sans-serif;
+    background:black;
+}
+
+/* PAGE */
+
+.page{
+    width:100%;
+    height:100vh;
+    position:relative;
     overflow:hidden;
     background:black;
 }
 
-/* First Page */
-
-.page1{
-    width:100%;
-    height:100vh;
-    background:linear-gradient(135deg,#ff4da6,#ff6b81,#ff9f43);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    position:relative;
-    overflow:hidden;
-}
-
-/* Floating Hearts */
-
-.heart{
-    position:absolute;
-    color:white;
-    font-size:25px;
-    animation:float 6s linear infinite;
-    opacity:.7;
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(100vh) scale(.5);
-    }
-    100%{
-        transform:translateY(-120px) scale(1.4);
-    }
-}
-
-/* Love Card */
-
-.card{
-    width:90%;
-    max-width:360px;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(10px);
-    border-radius:30px;
-    padding:35px 20px;
-    text-align:center;
-    box-shadow:0 10px 40px rgba(0,0,0,.25);
-    animation:popup 1s ease;
-}
-
-@keyframes popup{
-    from{
-        transform:scale(.6);
-        opacity:0;
-    }
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
-}
-
-.emoji{
-    font-size:90px;
-    animation:bounce 2s infinite;
-}
-
-@keyframes bounce{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-12px);
-    }
-}
-
-.card h1{
-    color:white;
-    font-size:34px;
-    margin-top:20px;
-    line-height:1.4;
-    text-shadow:0 0 15px rgba(255,255,255,.5);
-}
-
-.card p{
-    color:white;
-    margin-top:15px;
-    font-size:18px;
-}
-
-/* Buttons */
-
-.buttons{
-    margin-top:35px;
-    display:flex;
-    justify-content:center;
-    gap:15px;
-}
-
-button{
-    border:none;
-    padding:14px 26px;
-    border-radius:50px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.yes{
-    background:white;
-    color:#ff4da6;
-}
-
-.yes:hover{
-    transform:scale(1.1);
-}
-
-.no{
-    background:#fff3;
-    color:white;
-}
-
-/* Second Page */
-
-.page2{
-    width:100%;
-    height:100vh;
-    background:black;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    position:relative;
-    overflow:hidden;
-}
-
-/* Stars */
-
-.stars{
-    position:absolute;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-}
+/* STARS */
 
 .star{
     position:absolute;
@@ -181,134 +52,255 @@ button{
     }
 }
 
-/* Text */
+/* TEXT */
 
-.love-text{
+.text-box{
     position:absolute;
-    top:50px;
+    top:60px; /* লেখাগুলো উপরে */
+    width:100%;
     text-align:center;
+    z-index:10;
+    padding:0 15px;
+}
+
+.text-box h1{
     color:white;
-    font-size:40px;
-    font-weight:bold;
-    text-shadow:0 0 20px white;
+    font-size:45px;
+    line-height:1.4;
+    text-shadow:
+    0 0 10px #ff4da6,
+    0 0 20px #ff4da6,
+    0 0 40px #ff4da6;
     animation:glow 2s infinite alternate;
-    z-index:5;
-    padding:0 20px;
+}
+
+.text-box p{
+    margin-top:30px;
+    color:white;
+    font-size:26px;
+    line-height:1.8;
+    font-weight:bold;
+    text-shadow:
+    0 0 10px #ff4da6,
+    0 0 20px #ff4da6;
 }
 
 @keyframes glow{
     from{
-        text-shadow:0 0 10px white;
+        text-shadow:
+        0 0 10px white,
+        0 0 20px #ff4da6;
     }
+
     to{
-        text-shadow:0 0 25px #ff4da6;
+        text-shadow:
+        0 0 20px white,
+        0 0 40px #ff4da6,
+        0 0 60px #ff4da6;
     }
 }
 
-/* Flowers */
+/* FLOWERS AREA */
 
 .flowers{
     position:absolute;
-    bottom:60px;
+    bottom:20px;
+    width:100%;
+    height:45%;
     display:flex;
-    gap:30px;
+    justify-content:center;
+    align-items:flex-end;
+    gap:25px;
 }
+
+/* FLOWER */
 
 .flower{
     position:relative;
-    width:80px;
-    height:200px;
+    width:120px;
+    height:300px;
     animation:up 2s ease forwards;
+}
+
+.flower:nth-child(2){
+    transform:scale(1.1);
+}
+
+.flower:nth-child(3){
+    transform:scale(.9);
 }
 
 @keyframes up{
     from{
-        transform:translateY(250px);
+        transform:translateY(300px);
         opacity:0;
     }
+
     to{
         transform:translateY(0);
         opacity:1;
     }
 }
 
-/* Stem */
+/* STEM */
 
 .stem{
     position:absolute;
-    width:6px;
-    height:120px;
-    background:#2ecc71;
+    width:7px;
+    height:180px;
+    background:linear-gradient(#1aff66,#008f39);
     left:50%;
-    transform:translateX(-50%);
     bottom:0;
+    transform:translateX(-50%);
     border-radius:20px;
 }
 
-/* Petals */
+/* LEAVES */
+
+.leaf{
+    position:absolute;
+    width:50px;
+    height:18px;
+    background:linear-gradient(#00ff66,#007a33);
+    border-radius:50px 0;
+}
+
+.leaf1{
+    left:18px;
+    bottom:80px;
+    transform:rotate(-40deg);
+}
+
+.leaf2{
+    right:18px;
+    bottom:120px;
+    transform:rotate(40deg);
+}
+
+/* FLOWER PETALS */
 
 .petal{
-    width:35px;
-    height:35px;
+    position:absolute;
+    width:48px;
+    height:48px;
     background:white;
     border-radius:50%;
-    position:absolute;
+    box-shadow:0 0 12px rgba(255,255,255,.8);
 }
 
-.center{
-    width:20px;
-    height:20px;
-    background:yellow;
-    border-radius:50%;
-    position:absolute;
-    top:28px;
-    left:30px;
-    z-index:2;
-}
+/* PETAL POSITIONS */
 
 .p1{
-    top:10px;
-    left:22px;
+    top:25px;
+    left:36px;
 }
 
 .p2{
-    top:28px;
-    left:5px;
+    top:55px;
+    left:8px;
 }
 
 .p3{
-    top:28px;
-    left:40px;
+    top:55px;
+    right:8px;
 }
 
 .p4{
-    top:50px;
-    left:22px;
+    top:85px;
+    left:36px;
 }
 
-/* Glow Particles */
+/* CENTER */
+
+.center{
+    position:absolute;
+    width:28px;
+    height:28px;
+    background:#ffe600;
+    border-radius:50%;
+    top:62px;
+    left:46px;
+    z-index:2;
+    box-shadow:0 0 20px yellow;
+}
+
+/* GLOW PARTICLES */
 
 .spark{
     position:absolute;
     width:4px;
     height:4px;
-    background:#fff;
     border-radius:50%;
+    background:white;
     animation:spark 3s linear infinite;
 }
 
 @keyframes spark{
+
     0%{
-        transform:translateY(0) scale(.5);
+        transform:translateY(0) scale(.4);
         opacity:0;
     }
+
     50%{
         opacity:1;
     }
+
     100%{
-        transform:translateY(-150px) scale(1.4);
+        transform:translateY(-160px) scale(1.5);
         opacity:0;
     }
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.text-box{
+    top:40px;
+}
+
+.text-box h1{
+    font-size:35px;
+}
+
+.text-box p{
+    font-size:20px;
+}
+
+.flower{
+    width:90px;
+    height:250px;
+}
+
+.petal{
+    width:38px;
+    height:38px;
+}
+
+.p1{
+    left:26px;
+}
+
+.p2{
+    left:2px;
+}
+
+.p3{
+    right:2px;
+}
+
+.p4{
+    left:26px;
+}
+
+.center{
+    width:22px;
+    height:22px;
+    left:34px;
+}
+
 }
 
 </style>
@@ -316,70 +308,33 @@ button{
 
 <body>
 
-<!-- First Page -->
+<div class="page">
 
-<div class="page1" id="page1">
+    <!-- TEXT -->
 
-    <!-- Hearts -->
-    <div class="heart" style="left:10%; animation-delay:0s;">💖</div>
-    <div class="heart" style="left:30%; animation-delay:1s;">💕</div>
-    <div class="heart" style="left:50%; animation-delay:2s;">💗</div>
-    <div class="heart" style="left:70%; animation-delay:3s;">💞</div>
-    <div class="heart" style="left:85%; animation-delay:4s;">💓</div>
-
-    <!-- Card -->
-    <div class="card">
-
-        <div class="emoji">🎂💖</div>
+    <div class="text-box">
 
         <h1>
-            তোমার জন্য একটি বিশেষ Birthday Surprise ✨
+            🎂 Happy Birthday Marjia 💖✨
         </h1>
 
         <p>
-            নিচের বাটনে ক্লিক করো 💕
+            তোমার জীবনের প্রতিটি মুহূর্ত হোক <br>
+            সুখ, হাসি আর ভালোবাসায় ভরা 🌸 <br><br>
+
+            তোমার সব স্বপ্ন পূরণ হোক ✨ <br>
+            সবসময় এভাবেই হাসিখুশি থাকো 😊💕 <br><br>
+
+            Enjoy your beautiful day princess 👑💫
         </p>
-
-        <div class="buttons">
-
-            <button class="yes" onclick="openLove()">
-                Yes 💖
-            </button>
-
-            <button class="no">
-                Of Course 😍
-            </button>
-
-        </div>
 
     </div>
 
-</div>
+    <!-- FLOWERS -->
 
-<!-- Second Page -->
-
-<div class="page2" id="page2">
-
-    <!-- Stars -->
-    <div class="stars" id="stars"></div>
-
-    <!-- Text -->
-    <div class="love-text">
-🎂 Happy Birthday Marjia 💖✨ <br><br>
-
-তোমার জীবনের প্রতিটি মুহূর্ত হোক সুখ, হাসি আর ভালোবাসায় ভরা 🌸 <br>
-
-তোমার সব স্বপ্ন পূরণ হোক এবং সবসময় এভাবেই হাসিখুশি থাকো 😊💕 <br><br>
-
-আজকের দিনটা শুধু তোমার জন্যই স্পেশাল 🎉 <br>
-
-Enjoy your beautiful day princess 👑💫 <br><br>
-
-— Best Wishes For You 💝
-</div>
-
-    <!-- Flowers -->
     <div class="flowers">
+
+        <!-- FLOWER 1 -->
 
         <div class="flower">
 
@@ -392,9 +347,14 @@ Enjoy your beautiful day princess 👑💫 <br><br>
 
             <div class="stem"></div>
 
+            <div class="leaf leaf1"></div>
+            <div class="leaf leaf2"></div>
+
         </div>
 
-        <div class="flower" style="animation-delay:.5s;">
+        <!-- FLOWER 2 -->
+
+        <div class="flower">
 
             <div class="petal p1"></div>
             <div class="petal p2"></div>
@@ -405,9 +365,14 @@ Enjoy your beautiful day princess 👑💫 <br><br>
 
             <div class="stem"></div>
 
+            <div class="leaf leaf1"></div>
+            <div class="leaf leaf2"></div>
+
         </div>
 
-        <div class="flower" style="animation-delay:1s;">
+        <!-- FLOWER 3 -->
+
+        <div class="flower">
 
             <div class="petal p1"></div>
             <div class="petal p2"></div>
@@ -417,6 +382,9 @@ Enjoy your beautiful day princess 👑💫 <br><br>
             <div class="center"></div>
 
             <div class="stem"></div>
+
+            <div class="leaf leaf1"></div>
+            <div class="leaf leaf2"></div>
 
         </div>
 
@@ -424,33 +392,19 @@ Enjoy your beautiful day princess 👑💫 <br><br>
 
 </div>
 
-<!-- Music -->
+<!-- MUSIC -->
 
-<audio id="music" loop>
-<source src="music.mp3" type="audio/mp3">
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mp3">
 </audio>
 
 <script>
 
-/* Open Second Page */
+/* STARS */
 
-function openLove(){
+for(let i=0;i<180;i++){
 
-    document.getElementById("page1").style.display="none";
-
-    document.getElementById("page2").style.display="flex";
-
-    document.getElementById("music").play();
-
-}
-
-/* Stars */
-
-const stars = document.getElementById("stars");
-
-for(let i=0;i<120;i++){
-
-    let star = document.createElement("div");
+    let star=document.createElement("div");
 
     star.classList.add("star");
 
@@ -460,13 +414,13 @@ for(let i=0;i<120;i++){
 
     star.style.animationDelay=Math.random()*3+"s";
 
-    stars.appendChild(star);
+    document.body.appendChild(star);
 
 }
 
-/* Spark Effects */
+/* SPARKS */
 
-for(let i=0;i<40;i++){
+for(let i=0;i<50;i++){
 
     let spark=document.createElement("div");
 
@@ -474,15 +428,15 @@ for(let i=0;i<40;i++){
 
     spark.style.left=Math.random()*100+"%";
 
-    spark.style.bottom=Math.random()*200+"px";
+    spark.style.bottom=Math.random()*250+"px";
 
     spark.style.animationDelay=Math.random()*3+"s";
 
-    document.getElementById("page2").appendChild(spark);
+    document.body.appendChild(spark);
 
 }
 
 </script>
 
 </body>
-  </html>
+</html>
