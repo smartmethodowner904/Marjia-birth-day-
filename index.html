@@ -344,7 +344,122 @@ button{
         opacity:0;
     }
 }
+/* RGB Animated Background */
 
+.page2{
+    background:linear-gradient(
+        -45deg,
+        #ff0080,
+        #7928ff,
+        #00c3ff,
+        #00ff95
+    );
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
+}
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* Wedding Lights */
+
+.light{
+    position:absolute;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    animation:blinkLight 1s infinite alternate;
+    box-shadow:0 0 20px currentColor;
+}
+
+@keyframes blinkLight{
+
+    from{
+        opacity:.3;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.4);
+    }
+
+}
+
+/* RGB Text Animation */
+
+.text-box h1{
+    animation:rgbText 4s linear infinite;
+}
+
+.text-box h2{
+    animation:rgbText 5s linear infinite;
+}
+
+@keyframes rgbText{
+
+    0%{
+        color:#ff0080;
+        text-shadow:0 0 15px #ff0080;
+    }
+
+    25%{
+        color:#00c3ff;
+        text-shadow:0 0 15px #00c3ff;
+    }
+
+    50%{
+        color:#00ff95;
+        text-shadow:0 0 15px #00ff95;
+    }
+
+    75%{
+        color:#ffd500;
+        text-shadow:0 0 15px #ffd500;
+    }
+
+    100%{
+        color:#ff0080;
+        text-shadow:0 0 15px #ff0080;
+    }
+
+}
+
+/* Paragraph Glow */
+
+.text-box p{
+
+    animation:fadeGlow 3s infinite alternate;
+
+}
+
+@keyframes fadeGlow{
+
+    from{
+        opacity:.7;
+        transform:translateY(0);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(-2px);
+        text-shadow:0 0 10px white;
+    }
+
+    }
 </style>
 </head>
 
@@ -526,6 +641,26 @@ for(let i=0;i<40;i++){
     spark.style.animationDelay=Math.random()*3+"s";
 
     document.getElementById("page2").appendChild(spark);
+
+}
+
+/* Wedding Lights */
+
+for(let i=0;i<80;i++){
+
+    let light=document.createElement("div");
+
+    light.classList.add("light");
+
+    light.style.left=Math.random()*100+"%";
+
+    light.style.top=Math.random()*100+"%";
+
+    light.style.color=`hsl(${Math.random()*360},100%,60%)`;
+
+    light.style.animationDelay=Math.random()*2+"s";
+
+    document.getElementById("page2").appendChild(light);
 
 }
 
