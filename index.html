@@ -181,28 +181,62 @@ button{
     }
 }
 
-/* Text */
-
 .love-text{
     position:absolute;
-    top:50px;
-    text-align:center;
-    color:white;
-    font-size:40px;
-    font-weight:bold;
-    text-shadow:0 0 20px white;
-    animation:glow 2s infinite alternate;
-    z-index:5;
-    padding:0 20px;
+    top:20px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    z-index:10;
+    padding:0 15px;
 }
 
-@keyframes glow{
+.text-box{
+    width:100%;
+    max-width:360px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    backdrop-filter:blur(8px);
+    border-radius:25px;
+    padding:20px;
+    text-align:center;
+    color:white;
+    box-shadow:0 0 25px rgba(255,255,255,.08);
+    animation:fadeDown 1.5s ease;
+}
+
+.text-box h1{
+    font-size:24px;
+    margin-bottom:15px;
+    line-height:1.4;
+    text-shadow:0 0 15px rgba(255,255,255,.7);
+}
+
+.text-box p{
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:10px;
+    color:#f1f1f1;
+}
+
+.text-box h2{
+    margin-top:12px;
+    font-size:17px;
+    color:#ffd6f3;
+}
+
+@keyframes fadeDown{
+
     from{
-        text-shadow:0 0 10px white;
+        opacity:0;
+        transform:translateY(-40px);
     }
+
     to{
-        text-shadow:0 0 25px #ff4da6;
+        opacity:1;
+        transform:translateY(0);
     }
+
 }
 
 /* Flowers */
@@ -365,16 +399,32 @@ button{
 
     <!-- Text -->
     <div class="love-text">
-🎂 Happy Birthday Marjia 💖✨ <br><br>
 
-তোমার জীবনের প্রতিটি মুহূর্ত হোক সুখ, হাসি আর ভালোবাসায় ভরা 🌸 <br>
-তোমার সব স্বপ্ন পূরণ হোক এবং সবসময় এভাবেই হাসিখুশি থাকো 😊💕 <br><br>
+    <div class="text-box">
 
-আজকের দিনটা শুধু তোমার জন্যই স্পেশাল 🎉 <br>
-Enjoy your beautiful day princess 👑💫 <br><br>
+        <h1>🎂 Happy Birthday Marjia 💖✨</h1>
 
-— Best Wishes For You 💝
+        <p>
+            তোমার জীবনের প্রতিটি মুহূর্ত হোক সুখ, হাসি আর ভালোবাসায় ভরা 🌸
+        </p>
+
+        <p>
+            তোমার সব স্বপ্ন পূরণ হোক এবং সবসময় এভাবেই হাসিখুশি থাকো 😊💕
+        </p>
+
+        <p>
+            আজকের দিনটা শুধু তোমার জন্যই স্পেশাল 🎉
+        </p>
+
+        <p>
+            Enjoy your beautiful day princess 👑💫
+        </p>
+
+        <h2>— Best Wishes For You 💝</h2>
+
     </div>
+
+</div>
     <!-- Flowers -->
     <div class="flowers">
 
