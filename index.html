@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Marjia</title>
+<title>Birthday Surprise</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -16,28 +16,157 @@
 }
 
 body{
-    overflow:hidden;
     font-family:'Poppins',sans-serif;
+    overflow:hidden;
     background:black;
 }
 
-/* Background */
+/* First Page */
 
-.page{
+.page1{
     width:100%;
     height:100vh;
+    background:linear-gradient(135deg,#ff4da6,#ff6b81,#ff9f43);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
     position:relative;
     overflow:hidden;
-    background:
-    radial-gradient(circle at top,#1b1b2f,#000);
+}
+
+/* Floating Hearts */
+
+.heart{
+    position:absolute;
+    color:white;
+    font-size:25px;
+    animation:float 6s linear infinite;
+    opacity:.7;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh) scale(.5);
+    }
+    100%{
+        transform:translateY(-120px) scale(1.4);
+    }
+}
+
+/* Love Card */
+
+.card{
+    width:90%;
+    max-width:360px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(10px);
+    border-radius:30px;
+    padding:35px 20px;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+    animation:popup 1s ease;
+}
+
+@keyframes popup{
+    from{
+        transform:scale(.6);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.emoji{
+    font-size:90px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.card h1{
+    color:white;
+    font-size:34px;
+    margin-top:20px;
+    line-height:1.4;
+    text-shadow:0 0 15px rgba(255,255,255,.5);
+}
+
+.card p{
+    color:white;
+    margin-top:15px;
+    font-size:18px;
+}
+
+/* Buttons */
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+button{
+    border:none;
+    padding:14px 26px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.yes{
+    background:white;
+    color:#ff4da6;
+}
+
+.yes:hover{
+    transform:scale(1.1);
+}
+
+.no{
+    background:#fff3;
+    color:white;
+}
+
+/* Second Page */
+
+.page2{
+    width:100%;
+    height:100vh;
+    background:black;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
 }
 
 /* Stars */
 
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
 .star{
     position:absolute;
-    width:2px;
-    height:2px;
+    width:3px;
+    height:3px;
     background:white;
     border-radius:50%;
     animation:blink 2s infinite;
@@ -54,210 +183,132 @@ body{
 
 /* Text */
 
-.text{
+.love-text{
     position:absolute;
-    top:40px;
-    width:100%;
+    top:50px;
     text-align:center;
     color:white;
-    z-index:5;
-    padding:20px;
-    animation:fadeIn 2s ease;
-}
-
-.text h1{
-    font-size:42px;
-    line-height:1.5;
-    text-shadow:0 0 25px #ff66c4;
-    color:#fff;
-}
-
-.text p{
-    margin-top:18px;
-    font-size:20px;
-    line-height:1.9;
-    color:#f5f5f5;
-    text-shadow:0 0 10px rgba(255,255,255,.5);
-}
-
-.sign{
-    margin-top:25px;
-    font-size:24px;
-    color:#ff9de2;
+    font-size:40px;
     font-weight:bold;
+    text-shadow:0 0 20px white;
+    animation:glow 2s infinite alternate;
+    z-index:5;
+    padding:0 20px;
 }
 
-/* Fade Animation */
-
-@keyframes fadeIn{
+@keyframes glow{
     from{
-        opacity:0;
-        transform:translateY(-20px);
+        text-shadow:0 0 10px white;
     }
     to{
-        opacity:1;
-        transform:translateY(0);
+        text-shadow:0 0 25px #ff4da6;
     }
 }
 
-/* Sakura Tree */
+/* Flowers */
 
-.tree{
+.flowers{
     position:absolute;
-    bottom:0;
-    width:100%;
-    height:45vh;
+    bottom:60px;
     display:flex;
-    justify-content:center;
-    align-items:flex-end;
+    gap:30px;
 }
-
-/* Tree Trunk */
-
-.trunk{
-    width:28px;
-    height:220px;
-    background:#5c3b1e;
-    border-radius:20px;
-    position:relative;
-}
-
-/* Branches */
-
-.branch{
-    position:absolute;
-    width:140px;
-    height:12px;
-    background:#5c3b1e;
-    border-radius:20px;
-}
-
-.b1{
-    top:40px;
-    left:-120px;
-    transform:rotate(-25deg);
-}
-
-.b2{
-    top:80px;
-    right:-120px;
-    transform:rotate(25deg);
-}
-
-.b3{
-    top:130px;
-    left:-100px;
-    transform:rotate(-15deg);
-}
-
-.b4{
-    top:160px;
-    right:-100px;
-    transform:rotate(15deg);
-}
-
-/* Sakura Flowers */
 
 .flower{
-    position:absolute;
-    width:18px;
-    height:18px;
-    background:pink;
-    border-radius:50%;
-    box-shadow:
-    10px 0 pink,
-    -10px 0 pink,
-    0 10px pink,
-    0 -10px pink;
+    position:relative;
+    width:80px;
+    height:200px;
+    animation:up 2s ease forwards;
 }
 
-/* Flower Positions */
-
-.f1{
-    top:15px;
-    left:-125px;
-}
-
-.f2{
-    top:65px;
-    right:-125px;
-}
-
-.f3{
-    top:120px;
-    left:-105px;
-}
-
-.f4{
-    top:145px;
-    right:-105px;
-}
-
-/* Falling Flowers */
-
-.petals{
-    position:absolute;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-}
-
-.petal{
-    position:absolute;
-    color:#ffb6d9;
-    font-size:20px;
-    animation:fall linear infinite;
-}
-
-@keyframes fall{
-
-    0%{
-        transform:translateY(-100px) rotate(0deg);
-        opacity:1;
-    }
-
-    100%{
-        transform:translateY(110vh) rotate(360deg);
+@keyframes up{
+    from{
+        transform:translateY(250px);
         opacity:0;
     }
-
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
 }
 
-/* Glow */
+/* Stem */
 
-.glow{
+.stem{
     position:absolute;
-    width:300px;
-    height:300px;
-    background:#ff66c4;
-    filter:blur(120px);
-    opacity:.25;
-    border-radius:50%;
-    top:50%;
+    width:6px;
+    height:120px;
+    background:#2ecc71;
     left:50%;
-    transform:translate(-50%,-50%);
+    transform:translateX(-50%);
+    bottom:0;
+    border-radius:20px;
 }
 
-/* Mobile */
+/* Petals */
 
-@media(max-width:600px){
-
-.text h1{
-    font-size:30px;
+.petal{
+    width:35px;
+    height:35px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
 }
 
-.text p{
-    font-size:17px;
+.center{
+    width:20px;
+    height:20px;
+    background:yellow;
+    border-radius:50%;
+    position:absolute;
+    top:28px;
+    left:30px;
+    z-index:2;
 }
 
-.sign{
-    font-size:20px;
+.p1{
+    top:10px;
+    left:22px;
 }
 
-.trunk{
-    height:180px;
+.p2{
+    top:28px;
+    left:5px;
 }
 
+.p3{
+    top:28px;
+    left:40px;
+}
+
+.p4{
+    top:50px;
+    left:22px;
+}
+
+/* Glow Particles */
+
+.spark{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:#fff;
+    border-radius:50%;
+    animation:spark 3s linear infinite;
+}
+
+@keyframes spark{
+    0%{
+        transform:translateY(0) scale(.5);
+        opacity:0;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-150px) scale(1.4);
+        opacity:0;
+    }
 }
 
 </style>
@@ -265,57 +316,39 @@ body{
 
 <body>
 
-<div class="page">
+<!-- First Page -->
 
-    <div class="glow"></div>
+<div class="page1" id="page1">
 
-    <!-- Stars -->
+    <!-- Hearts -->
+    <div class="heart" style="left:10%; animation-delay:0s;">💖</div>
+    <div class="heart" style="left:30%; animation-delay:1s;">💕</div>
+    <div class="heart" style="left:50%; animation-delay:2s;">💗</div>
+    <div class="heart" style="left:70%; animation-delay:3s;">💞</div>
+    <div class="heart" style="left:85%; animation-delay:4s;">💓</div>
 
-    <div id="stars"></div>
+    <!-- Card -->
+    <div class="card">
 
-    <!-- Falling Flowers -->
-
-    <div class="petals" id="petals"></div>
-
-    <!-- Text -->
-
-    <div class="text">
+        <div class="emoji">🎂💖</div>
 
         <h1>
-            🎂 Happy Birthday Marjia 💖✨
+            তোমার জন্য একটি বিশেষ Birthday Surprise ✨
         </h1>
 
         <p>
-            তোমার জীবনের প্রতিটি মুহূর্ত হোক সুখ, হাসি আর ভালোবাসায় ভরা 🌸 <br>
-
-            তোমার সব স্বপ্ন পূরণ হোক এবং সবসময় এভাবেই হাসিখুশি থাকো 😊💕 <br><br>
-
-            আজকের দিনটা শুধু তোমার জন্যই স্পেশাল 🎉 <br>
-
-            Enjoy your beautiful day princess 👑💫
+            নিচের বাটনে ক্লিক করো 💕
         </p>
 
-        <div class="sign">
-            — Best Wishes For You 💝
-        </div>
+        <div class="buttons">
 
-    </div>
+            <button class="yes" onclick="openLove()">
+                Yes 💖
+            </button>
 
-    <!-- Sakura Tree -->
-
-    <div class="tree">
-
-        <div class="trunk">
-
-            <div class="branch b1"></div>
-            <div class="branch b2"></div>
-            <div class="branch b3"></div>
-            <div class="branch b4"></div>
-
-            <div class="flower f1"></div>
-            <div class="flower f2"></div>
-            <div class="flower f3"></div>
-            <div class="flower f4"></div>
+            <button class="no">
+                Of Course 😍
+            </button>
 
         </div>
 
@@ -323,13 +356,98 @@ body{
 
 </div>
 
+<!-- Second Page -->
+
+<div class="page2" id="page2">
+
+    <!-- Stars -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Text -->
+    <div class="love-text">
+🎂 Happy Birthday Marjia 💖✨ <br><br>
+
+তোমার জীবনের প্রতিটি মুহূর্ত হোক সুখ, হাসি আর ভালোবাসায় ভরা 🌸 <br>
+তোমার সব স্বপ্ন পূরণ হোক এবং সবসময় এভাবেই হাসিখুশি থাকো 😊💕 <br><br>
+
+আজকের দিনটা শুধু তোমার জন্যই স্পেশাল 🎉 <br>
+Enjoy your beautiful day princess 👑💫 <br><br>
+
+— Best Wishes For You 💝
+    </div>
+    <!-- Flowers -->
+    <div class="flowers">
+
+        <div class="flower">
+
+            <div class="petal p1"></div>
+            <div class="petal p2"></div>
+            <div class="petal p3"></div>
+            <div class="petal p4"></div>
+
+            <div class="center"></div>
+
+            <div class="stem"></div>
+
+        </div>
+
+        <div class="flower" style="animation-delay:.5s;">
+
+            <div class="petal p1"></div>
+            <div class="petal p2"></div>
+            <div class="petal p3"></div>
+            <div class="petal p4"></div>
+
+            <div class="center"></div>
+
+            <div class="stem"></div>
+
+        </div>
+
+        <div class="flower" style="animation-delay:1s;">
+
+            <div class="petal p1"></div>
+            <div class="petal p2"></div>
+            <div class="petal p3"></div>
+            <div class="petal p4"></div>
+
+            <div class="center"></div>
+
+            <div class="stem"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Music -->
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
 <script>
+
+/* Open Second Page */
+
+function openLove(){
+
+    document.getElementById("page1").style.display="none";
+
+    document.getElementById("page2").style.display="flex";
+
+    document.getElementById("music").play();
+
+}
 
 /* Stars */
 
+const stars = document.getElementById("stars");
+
 for(let i=0;i<120;i++){
 
-    let star=document.createElement("div");
+    let star = document.createElement("div");
 
     star.classList.add("star");
 
@@ -337,35 +455,31 @@ for(let i=0;i<120;i++){
 
     star.style.top=Math.random()*100+"%";
 
-    star.style.animationDelay=Math.random()*2+"s";
+    star.style.animationDelay=Math.random()*3+"s";
 
-    document.body.appendChild(star);
+    stars.appendChild(star);
 
 }
 
-/* Falling Sakura Flowers */
+/* Spark Effects */
 
-const petals=document.getElementById("petals");
+for(let i=0;i<40;i++){
 
-for(let i=0;i<45;i++){
+    let spark=document.createElement("div");
 
-    let petal=document.createElement("div");
+    spark.classList.add("spark");
 
-    petal.classList.add("petal");
+    spark.style.left=Math.random()*100+"%";
 
-    petal.innerHTML="🌸";
+    spark.style.bottom=Math.random()*200+"px";
 
-    petal.style.left=Math.random()*100+"%";
+    spark.style.animationDelay=Math.random()*3+"s";
 
-    petal.style.animationDuration=(5+Math.random()*5)+"s";
-
-    petal.style.animationDelay=Math.random()*5+"s";
-
-    petals.appendChild(petal);
+    document.getElementById("page2").appendChild(spark);
 
 }
 
 </script>
 
 </body>
-</html>
+                </html>
